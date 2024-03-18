@@ -1,0 +1,59 @@
+#!/bin/bash -l
+
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=1
+#SBATCH --array=1-60%30
+#SBATCH -t 3:00:00
+#SBATCH --mem=1GB
+#SBATCH --job-name=aqtl
+#SBATCH -p defq,moore
+#SBATCH --exclude=esplhpc-cp040
+
+##################################
+# Setup environment
+##################################
+
+source /home/hernandezj45/anaconda3/etc/profile.d/conda.sh
+conda activate autoqtl-env
+
+##################################
+# Setup random seed info
+##################################
+EXPERIMENT_OFFSET=0
+SEED=$((SLURM_ARRAY_TASK_ID + EXPERIMENT_OFFSET))
+
+##################################
+# Treatments
+##################################
+
+NSGA2__MIN=1
+NSGA2__MAX=30
+
+LEXICASE__MIN=31
+LEXICASE__MAX=60
+
+
+##################################
+# Conditions
+##################################
+
+if [ ${SLURM_ARRAY_TASK_ID} -ge ${EXPLOITATION_RATE__MIN} ] && [ ${SLURM_ARRAY_TASK_ID} -le ${EXPLOITATION_RATE__MAX} ] ; then
+  SELECTION=NSGA2
+
+elif [ ${SLURM_ARRAY_TASK_ID} -ge ${CONTRADICTORY_0__MIN} ] && [ ${SLURM_ARRAY_TASK_ID} -le ${CONTRADICTORY_0__MAX} ] ; then
+  SELECTION=Lexicase
+
+else
+  echo "${SEED} from ${PROBLEM} failed to launch" >> /home/hernandezj45/Repos/GPTP-2O24-FINAL/GPTP-2024-Lexicase-Analysis/Results/failtolaunch.txt
+fi
+
+##################################
+# Data dump directory
+##################################
+
+DATA_DIR=/home/hernandezj45/Repos/AutoQTL-Adventures/Results/${SELECTION}/${SEED}
+
+python /home/hernandezj45/Repos/AutoQTL-Adventures/selection-diff.py \
+--selection ${SELECTION} \
+--seed ${SEED} \
+--savepath ${DATA_DIR}
