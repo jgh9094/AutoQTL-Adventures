@@ -4,6 +4,7 @@ import pandas as pd
 import sys
 import os
 
+SCHEMES = ['NSGA2', 'Lexicase']
 
 # responsible for looking through the data directories for success
 def CheckDir(dir,dump):
@@ -18,12 +19,14 @@ def CheckDir(dir,dump):
     # collect all data
     DF_LIST = []
 
-    for subdir, dirs, files in os.walk(dir):
-        # skip root dir
-        if subdir == dir:
-            continue
+    for scheme in SCHEMES:
+        scheme_dir = dir + scheme
+        for subdir, _, _ in os.walk(scheme_dir):
+            # skip root dir
+            if subdir == dir:
+                continue
 
-        print('subdir:',subdir)
+            print('scheme_dir:',subdir)
 
 
 
