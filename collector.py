@@ -28,11 +28,10 @@ def CheckDir(dir,dump):
 
             print('scheme_dir:',subdir)
 
+            DF_LIST.append(pd.read_csv(subdir + '/data.csv'))
 
+    pd.concat(DF_LIST).to_csv(path_or_buf= dump + 'scores.csv', index=False)
 
-    # fin_df = pd.concat(DF_LIST)
-
-    # fin_df.to_csv(path_or_buf= dump + 'over-time.csv', index=False)
 
 # runner
 def main():
