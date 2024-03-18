@@ -2,8 +2,8 @@
 
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=1
-#SBATCH --array=1-60%30
-#SBATCH -t 3:00:00
+#SBATCH --array=1-80%80
+#SBATCH -t 2:00:00
 #SBATCH --mem=1GB
 #SBATCH --job-name=aqtl
 #SBATCH -p defq,moore
