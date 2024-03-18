@@ -27,10 +27,10 @@ SEED=$((SLURM_ARRAY_TASK_ID + EXPERIMENT_OFFSET))
 ##################################
 
 NSGA2__MIN=1
-NSGA2__MAX=30
+NSGA2__MAX=40
 
-LEXICASE__MIN=31
-LEXICASE__MAX=60
+LEXICASE__MIN=41
+LEXICASE__MAX=80
 
 
 ##################################
