@@ -1,0 +1,4 @@
+[submodule "lexicase-base"]
+	path = lexicase-base
+	url = https://github.com/jgh9094/autoqtl.git
+	branch = lexicase-selection
