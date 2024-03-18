@@ -23,11 +23,6 @@ def main():
     print('seed:', args.seed)
     print('save path:', args.savepath)
 
-    # Check if the directory exist already
-    if os.path.exists(args.savepath):
-        print('REPLICATE ALREADY DONE')
-        return
-
     # read the sample data
     data = pd.read_csv("sample_data.csv") # change the data path as required
 
