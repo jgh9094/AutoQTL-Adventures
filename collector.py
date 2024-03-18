@@ -30,7 +30,7 @@ def CheckDir(dir,dump):
 
             DF_LIST.append(pd.read_csv(subdir + '/data.csv'))
 
-    pd.concat(DF_LIST).to_csv(path_or_buf= dump + 'scores.csv', index=False)
+    pd.concat(DF_LIST).to_csv(path_or_buf= dump + '/scores.csv', index=False)
 
 
 # runner
