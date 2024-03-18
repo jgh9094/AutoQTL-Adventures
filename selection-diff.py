@@ -39,7 +39,7 @@ def main():
     features_80, features_20, target_80, target_20 = train_test_split(features, target, test_size=0.2, random_state=42)
 
     # Initializing the autoqtl object using the AUTOQTLRegressor class
-    autoqtl_object = AUTOQTLRegressor(population_size=100, generations=100, verbosity=2, random_state=int(args.seed), selection='Lexicase')
+    autoqtl_object = AUTOQTLRegressor(population_size=100, generations=100, verbosity=2, random_state=int(args.seed), selection=args.selection)
 
     # calling the fit function
     autoqtl_object.fit(features= features_80, target= target_80, random_state= 42, test_size= 0.5)
