@@ -23,7 +23,7 @@ def CheckDir(dir,dump):
         scheme_dir = dir + scheme
         for subdir, _, _ in os.walk(scheme_dir):
             # skip root dir
-            if subdir == dir:
+            if subdir == scheme_dir:
                 continue
 
             print('scheme_dir:',subdir)
