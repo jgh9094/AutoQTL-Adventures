@@ -37,10 +37,10 @@ LEXICASE__MAX=60
 # Conditions
 ##################################
 
-if [ ${SLURM_ARRAY_TASK_ID} -ge ${EXPLOITATION_RATE__MIN} ] && [ ${SLURM_ARRAY_TASK_ID} -le ${EXPLOITATION_RATE__MAX} ] ; then
+if [ ${SLURM_ARRAY_TASK_ID} -ge ${NSGA2__MIN} ] && [ ${SLURM_ARRAY_TASK_ID} -le ${NSGA2__MAX} ] ; then
   SELECTION=NSGA2
 
-elif [ ${SLURM_ARRAY_TASK_ID} -ge ${CONTRADICTORY_0__MIN} ] && [ ${SLURM_ARRAY_TASK_ID} -le ${CONTRADICTORY_0__MAX} ] ; then
+elif [ ${SLURM_ARRAY_TASK_ID} -ge ${LEXICASE__MIN} ] && [ ${SLURM_ARRAY_TASK_ID} -le ${LEXICASE__MAX} ] ; then
   SELECTION=Lexicase
 
 else
