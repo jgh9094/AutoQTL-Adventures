@@ -4,7 +4,7 @@ import pandas as pd
 import sys
 import os
 
-SCHEMES = ['NSGA2', 'Lexicase']
+SCHEMES = ['NSGA2', 'Lexicase', 'MaxError', 'MeanAE', 'MedianAE']
 
 # responsible for looking through the data directories for success
 def CheckDir(dir,dump):

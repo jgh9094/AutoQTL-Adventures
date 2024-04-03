@@ -1,7 +1,7 @@
 # clean start
 rm(list = ls())
 cat("\014")
-setwd('/Users/hernandezj45/Desktop/Repositories/AutoQTL-Adventures')
+setwd('/Users/hernandezj45/Desktop/Repositories/AutoQTL-Adventures/Data-Tools/')
 
 # libraries we are using
 library(ggplot2)
@@ -11,9 +11,9 @@ library(PupillometryR)
 
 # experiment variables
 
-NAMES = c('NSGA2','Lexicase')
-SHAPE <- c(21,24)
-cb_palette <- c('#D81B60','#1E88E5')
+NAMES = c('NSGA2','Lexicase','max_err','mean_ae','medi_ae')
+SHAPE <- c(5,3,1,2,6,0,4,20,1)
+cb_palette <- c('#332288','#88CCEE','#EE7733','#EE3377','#117733','#882255','#44AA99','#CCBB44', '#000000')
 TSIZE <- 22
 
 p_theme <- theme(
@@ -77,9 +77,10 @@ kruskal.test(Score ~ Scheme, data = scores)
 max_nsga = max(filter(scores, Scheme == 'NSGA2')$Score)
 sum(filter(scores, Scheme == 'Lexicase')$Score >  max_nsga)
 
+
 save_plot(
-  paste(filename ="comparison.pdf"),
+  paste(filename ="sample-data-comparison.pdf"),
   fig,
-  base_width=5,
-  base_height=8
+  base_width=10,
+  base_height=5
 )
