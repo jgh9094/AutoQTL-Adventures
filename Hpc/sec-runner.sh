@@ -64,7 +64,7 @@ fi
 DATA_DIR=/home/hernandezj45/Repos/AutoQTL-Adventures/Results/${DIR}/${SEED}
 
 python /home/hernandezj45/Repos/AutoQTL-Adventures/Source/second-scorer.py \
---selection ${SCORER} \
+--scorer ${SCORER} \
 --seed ${SEED} \
 --savepath ${DATA_DIR} \
 --data /home/hernandezj45/Repos/AutoQTL-Adventures/Source/sample_data.csv
