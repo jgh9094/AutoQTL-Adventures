@@ -15,14 +15,14 @@ scoreres = ['neg_mean_absolute_error','neg_median_absolute_error','max_error']
 def main():
     # read in arguments
     parser = argparse.ArgumentParser()
-    parser.add_argument("--scorer",  default=0,  type=int)
+    parser.add_argument("--scorer",  default=0,  type=str)
     parser.add_argument("--seed",       default=1,        type=int)
     parser.add_argument("--data",   default="./",     type=str)
     parser.add_argument("--savepath",   default="./",     type=str)
 
     # Parse all the arguments and print
     args = parser.parse_args()
-    print('scorer:', scoreres[args.scorer])
+    print('scorer:', args.scorer)
     print('seed:', args.seed)
     print('save path:', args.savepath)
     print('data path:', args.data)
@@ -39,7 +39,7 @@ def main():
 
     # Initializing the autoqtl object using the AUTOQTLRegressor class
     autoqtl_object = AUTOQTLRegressor(population_size=100, generations=100, verbosity=2, random_state=int(args.seed),
-                                      selection='Lexicase', sec_scoring=scoreres[args.scorer], ss_weight=1.0)
+                                      selection='Lexicase', sec_scoring=args.scorer, ss_weight=1.0)
 
     # calling the fit function
     autoqtl_object.fit(features= features_80, target= target_80, random_state= 42, test_size= 0.5)
