@@ -15,6 +15,7 @@
 
 source /home/hernandezj45/anaconda3/etc/profile.d/conda.sh
 conda activate autoqtl-env
+ pip install -e ../autoqtl
 
 ##################################
 # Setup random seed info
