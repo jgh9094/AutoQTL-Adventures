@@ -10,7 +10,7 @@ import os
 
 # to run locally and with updated changes: pip install -e ./lexicase-base; clear; python selection-diff.py --selection Lexicase --seed 1 --savepath ./
 
-scoreres = ['neg_mean_absolute_error','neg_median_absolute_error','max_error']
+scoreres = {'neg_mean_absolute_error': 'mean_ae','neg_median_absolute_error': 'medi_ae','max_error':'max_err'}
 
 def main():
     # read in arguments
@@ -94,7 +94,7 @@ def main():
     autoqtl_object.plot_final_pareto().savefig(args.savepath + '/front.png')
 
     # save the scores
-    data = [ [args.selection, holdout_score]]
+    data = [ [scoreres[args.scorer], holdout_score]]
     df = pd.DataFrame(data, columns=['Scheme', 'Score'])
     df.to_csv(args.savepath + '/data.csv', index=False)
 
