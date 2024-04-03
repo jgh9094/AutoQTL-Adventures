@@ -53,7 +53,7 @@ fi
 
 DATA_DIR=/home/hernandezj45/Repos/AutoQTL-Adventures/Results/${SELECTION}/${SEED}
 
-python /home/hernandezj45/Repos/AutoQTL-Adventures/selection-diff.py \
+python /home/hernandezj45/Repos/AutoQTL-Adventures/Source/selection-diff.py \
 --selection ${SELECTION} \
 --seed ${SEED} \
 --savepath ${DATA_DIR}
