@@ -43,8 +43,8 @@ fig = ggplot(scores, aes(x = Scheme, y = Score, color = Scheme, fill = Scheme, s
   geom_point(position = position_jitter(width = .015, height = .0001), size = 2.0, alpha = 1.0) +
   scale_y_continuous(
     name=bquote('Holdout'~r^2),
-    limits=c(.2, .23),
-    breaks=c(0.2,0.21,0.22,0.23),
+    limits=c(.2, .24),
+    breaks=c(0.2,0.21,0.22,0.23,0.24),
 
   ) +
   scale_x_discrete(
