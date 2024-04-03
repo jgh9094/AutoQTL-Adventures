@@ -23,9 +23,10 @@ def main():
     print('selection scheme:', args.selection)
     print('seed:', args.seed)
     print('save path:', args.savepath)
+    print('data path:', args.data)
 
     # read the sample data
-    data = pd.read_csv("sample_data.csv") # change the data path as required
+    data = pd.read_csv(args.data) # change the data path as required
 
     # extract the features and target
     features = data.iloc[:,:-1] # all the columns except the last column
