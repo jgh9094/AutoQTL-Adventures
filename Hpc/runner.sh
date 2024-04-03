@@ -57,4 +57,5 @@ DATA_DIR=/home/hernandezj45/Repos/AutoQTL-Adventures/Results/${SELECTION}/${SEED
 python /home/hernandezj45/Repos/AutoQTL-Adventures/Source/selection-diff.py \
 --selection ${SELECTION} \
 --seed ${SEED} \
---savepath ${DATA_DIR}
+--savepath ${DATA_DIR} \
+--data /home/hernandezj45/Repos/AutoQTL-Adventures/Source/sample_data.csv

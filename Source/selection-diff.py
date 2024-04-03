@@ -16,6 +16,7 @@ def main():
     parser.add_argument("--selection",  default='NSGA2',  type=str)
     parser.add_argument("--seed",       default=1,        type=int)
     parser.add_argument("--savepath",   default="./",     type=str)
+    parser.add_argument("--data",   default="./",     type=str)
 
     # Parse all the arguments and print
     args = parser.parse_args()

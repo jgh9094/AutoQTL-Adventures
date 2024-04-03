@@ -17,6 +17,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--scorer",  default=0,  type=int)
     parser.add_argument("--seed",       default=1,        type=int)
+    parser.add_argument("--data",   default="./",     type=str)
     parser.add_argument("--savepath",   default="./",     type=str)
 
     # Parse all the arguments and print
