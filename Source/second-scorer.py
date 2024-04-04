@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import argparse
 import os
+import sys
 
 # to run locally and with updated changes: pip install -e ./lexicase-base; clear; python selection-diff.py --selection Lexicase --seed 1 --savepath ./
 
@@ -26,6 +27,9 @@ def main():
     print('seed:', args.seed)
     print('save path:', args.savepath)
     print('data path:', args.data)
+
+    if os.path.exists(args.savepath):
+        sys.exit('DIRECTORY ALREADY EXISTS')
 
     # read the sample data
     data = pd.read_csv(args.data) # change the data path as required
