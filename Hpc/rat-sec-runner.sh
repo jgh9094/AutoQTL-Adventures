@@ -2,7 +2,7 @@
 
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=1
-#SBATCH --array=1-120%50
+#SBATCH --array=1-120%120
 #SBATCH -t 24:00:00
 #SBATCH --mem=1GB
 #SBATCH --job-name=rat-sec
