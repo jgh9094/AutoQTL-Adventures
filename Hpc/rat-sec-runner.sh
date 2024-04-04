@@ -3,9 +3,9 @@
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=1
 #SBATCH --array=1-120%50
-#SBATCH -t 2:00:00
+#SBATCH -t 24:00:00
 #SBATCH --mem=1GB
-#SBATCH --job-name=rat-sec  
+#SBATCH --job-name=rat-sec
 #SBATCH -p defq,moore
 #SBATCH --exclude=esplhpc-cp040
 
